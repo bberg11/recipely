@@ -1,0 +1,38 @@
+@charset 'UTF-8';
+
+// 1. Vendors
+@import 'assets/styles/vendors/normalize';
+
+// 2. Abstracts - Variables, functions, mixins, and placeholders
+@import 'assets/styles/abstracts/variables';
+@import 'assets/styles/abstracts/functions';
+@import 'assets/styles/abstracts/mixins';
+@import 'assets/styles/abstracts/placeholders';
+
+// 3. Base files
+@import 'assets/styles/base/base';
+@import 'assets/styles/base/helpers';
+@import 'assets/styles/base/typography';
+@import 'assets/styles/base/spacing';
+@import 'assets/styles/base/print';
+
+// 4. Layout-related sections
+@import 'assets/styles/layout/header';
+@import 'assets/styles/layout/footer';
+@import 'assets/styles/layout/forms';
+@import 'assets/styles/layout/grid';
+@import 'assets/styles/layout/grid-flex';
+
+// 5. Components
+@import 'assets/styles/components/buttons';
+@import 'assets/styles/components/lists';
+@import 'assets/styles/components/pagination';
+@import 'assets/styles/components/tables';
+@import 'assets/styles/components/media-queries'; //no content, just documentation
+
+// 6. Page-specific styles
+@import 'assets/styles/pages/home';
+
+// 7. Themes
+@import 'assets/styles/themes/default';
+@import 'assets/styles/themes/dark';
