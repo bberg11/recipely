@@ -1,1 +1,35 @@
-<h3>Shopping List Edit</h3>
+<form class="shopping-list-edit">
+  <div class="row">
+    <div class="col col--2">
+      <label for="name">Amount</label>
+      <input
+        class="u-full-width"
+        type="text"
+        placeholder="Ex: 10 lbs"
+        id="amount"
+        name="amount"
+      />
+    </div>
+    <div class="col col--10">
+      <label for="name">Name</label>
+      <input
+        class="u-full-width"
+        type="text"
+        placeholder="Ex: Potatoes"
+        id="name"
+        name="name"
+      />
+    </div>
+  </div>
+  <div class="shopping-list-edit__actions">
+    <button type="submit" class="btn btn--success shopping-list-edit__action">
+      Add
+    </button>
+    <button type="button" class="btn btn--danger shopping-list-edit__action">
+      Delete
+    </button>
+    <button type="button" class="btn btn--primary shopping-list-edit__action">
+      Clear
+    </button>
+  </div>
+</form>

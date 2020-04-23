@@ -1,7 +1,14 @@
 <div class="row">
-  <h2>Shopping List</h2>
-
-  <app-shopping-list-edit></app-shopping-list-edit>
-  <hr />
-  <h3>Shopping List Items</h3>
+  <div class="shopping-list">
+    <h3 class="shopping-list__title">Shopping List</h3>
+    <app-shopping-list-edit></app-shopping-list-edit>
+    <hr />
+    <ul class="shopping-list__items">
+      <li class="shopping-list__item" *ngFor="let ingredient of ingredients">
+        <span class="shopping-list__item-amount">{{ ingredient.amount }}</span>
+        of
+        <span class="shopping-list__item-name">{{ ingredient.name }}</span>
+      </li>
+    </ul>
+  </div>
 </div>
