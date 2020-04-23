@@ -4,10 +4,10 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ShoppingListsService {
   ingredients: Ingredient[] = [
-    new Ingredient('Potatoes', '1 lb'),
-    new Ingredient('Steaks', '3'),
-    new Ingredient('Eggs', '2'),
-    new Ingredient('Whole Milk', '2 cups'),
+    new Ingredient('lb. of Potatoes', 1),
+    new Ingredient('Steaks', 3),
+    new Ingredient('dozen Eggs', 2),
+    new Ingredient('cup Whole Milk', 1),
   ];
 
   addIngredient(ingredient: Ingredient): void {
