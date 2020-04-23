@@ -11,12 +11,12 @@ export class RecipeListComponent implements OnInit {
     new Recipe(
       'Recipe One',
       'Description of Recipe One. Yadda yadda yadda',
-      `https://picsum.photos/id/${this.randomNumber()}/200`
+      'https://via.placeholder.com/150'
     ),
     new Recipe(
       'Recipe Two',
       'Description of Recipe Two. Nom nom nom',
-      `https://picsum.photos/id/${this.randomNumber()}/200`
+      'https://via.placeholder.com/150'
     ),
   ];
 
