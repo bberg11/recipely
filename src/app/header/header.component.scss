@@ -1,0 +1,70 @@
+@import '../../assets/styles/abstracts/variables';
+.header {
+  margin-bottom: ($spacing-unit * 3);
+  padding: $spacing-unit ($spacing-unit * 0.5);
+  text-align: center;
+  border-bottom: 1px solid $color-primary;
+
+  @media (#{$bp-larger-than-tablet}) {
+    padding: ($spacing-unit * 3) 0;
+    text-align: left;
+  }
+}
+
+.header__brand {
+  margin-bottom: $spacing-unit;
+  font-size: 2rem;
+  text-transform: uppercase;
+
+  @media (#{$bp-larger-than-tablet}) {
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.header__nav,
+.header__utility,
+.header__utility-dropdown {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  vertical-align: middle;
+}
+
+.header__nav {
+  @media (#{$bp-larger-than-tablet}) {
+    margin-left: ($spacing-unit * 2);
+  }
+}
+
+.header__nav-item {
+  display: inline-block;
+  margin: 0 $spacing-unit;
+}
+
+.header__utility {
+  @media (#{$bp-larger-than-tablet}) {
+    float: right;
+  }
+}
+
+.header__utility-item {
+  position: relative;
+  margin: 0 $spacing-unit;
+}
+
+.header__utility-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  background: white;
+
+  .header__utility-item:hover & {
+    display: block;
+  }
+}

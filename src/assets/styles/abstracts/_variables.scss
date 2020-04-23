@@ -3,57 +3,57 @@
 // -----------------------------------------------------------------------------
 
 // Breakpoints
-$bp-larger-than-mobile    : "min-width: 400px" !default;
-$bp-larger-than-phablet   : "min-width: 550px" !default;
-$bp-larger-than-tablet    : "min-width: 750px" !default;
-$bp-larger-than-desktop   : "min-width: 1000px" !default;
-$bp-larger-than-desktophd : "min-width: 1200px" !default;
+$bp-larger-than-mobile: 'min-width: 400px' !default;
+$bp-larger-than-phablet: 'min-width: 550px' !default;
+$bp-larger-than-tablet: 'min-width: 750px' !default;
+$bp-larger-than-desktop: 'min-width: 1000px' !default;
+$bp-larger-than-desktophd: 'min-width: 1200px' !default;
 
 //Globals
-$line-height:            2.4rem !default;
-$global-radius:          .2rem !default;
-$border-color:            #bbb !default;
+$line-height: 2.4rem !default;
+$global-radius: 0.2rem !default;
+$border-color: #bbb !default;
+$spacing-unit: 1rem !default;
 
 // Font variables
-$font-sans-serif: "Roboto", Helvetica, Arial, sans-serif !default;
-$font-serif:       "Merriweather", Georgia, "Times New Roman", Times, serif;
+$font-sans-serif: 'Roboto', Helvetica, Arial, sans-serif !default;
+$font-serif: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-$font-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-$font-base:        $font-sans-serif;
-$font-color:       #222222 !default;
+$font-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
+$font-base: $font-sans-serif;
+$font-color: #222222 !default;
 
-$font-size:                1.6rem !default;
-$font-size--lg:            ceil($font-size * 1.23); // ~20px
-$font-size--md:            ceil($font-size * 1.14); // ~16px
-$font-size--sm:            ceil($font-size * 0.92); // ~13px
-$font-size--xs:            ceil($font-size * 0.85); // ~12px
-
+$font-size: 1.6rem !default;
+$font-size--lg: ceil($font-size * 1.23); // ~20px
+$font-size--md: ceil($font-size * 1.14); // ~16px
+$font-size--sm: ceil($font-size * 0.92); // ~13px
+$font-size--xs: ceil($font-size * 0.85); // ~12px
 
 // Gray colors for theme
-$gray-lightest:          #f6f6f6;
-$gray-lighter:           #e4e4e4;
-$gray-light:             #d3d3d3;
-$gray:                   #a8a8a8;
-$gray-dark:              #7e7e7e;
-$gray-darker:            #545454;
-$gray-darkest:           #2a2a2a;
+$gray-lightest: #f6f6f6;
+$gray-lighter: #e4e4e4;
+$gray-light: #d3d3d3;
+$gray: #a8a8a8;
+$gray-dark: #7e7e7e;
+$gray-darker: #545454;
+$gray-darkest: #2a2a2a;
 
 // Classic brand colors
-$color-primary:         rgba(52, 152, 219,1.0);
-$color-primary--dark:   darken($color-primary, 5%) !default;
-$color-secondary:       $gray-dark !default;
+$color-primary: rgba(52, 152, 219, 1);
+$color-primary--dark: darken($color-primary, 5%) !default;
+$color-secondary: $gray-dark !default;
 
-$color-info:            #5BC0EB;
-$color-success:         #2BC016;
-$color-warning:         #E67E22;
-$color-danger:          #C3423F;
+$color-info: #5bc0eb;
+$color-success: #2bc016;
+$color-warning: #e67e22;
+$color-danger: #c3423f;
 
-$color-link:            #496DDB !default;
-$color-link--visited:   #9140D4 !default;
-$color-link--hover:     darken($color-link, 10%) !default;
-$color-link--active:    #D44076 !default;
+$color-link: #496ddb !default;
+$color-link--visited: #9140d4 !default;
+$color-link--hover: darken($color-link, 10%) !default;
+$color-link--active: #d44076 !default;
 
-$white:         #ffffff !default;
+$white: #ffffff !default;
 
 /// Copy text color
 /// @type Color
@@ -63,18 +63,17 @@ $text-color: rgb(34, 34, 34) !default;
 $color-brand: rgb(229, 0, 80) !default;
 
 // Z-Index
-$z-index-0:   -1;
-$z-index-1:   10;
-$z-index-2:   20;
-$z-index-3:   30;
-$z-index-4:   40;
-$z-index-5:   50;
-$z-index-6:   60;
-$z-index-7:   70;
-$z-index-8:   80;
-$z-index-9:   90;
+$z-index-0: -1;
+$z-index-1: 10;
+$z-index-2: 20;
+$z-index-3: 30;
+$z-index-4: 40;
+$z-index-5: 50;
+$z-index-6: 60;
+$z-index-7: 70;
+$z-index-8: 80;
+$z-index-9: 90;
 $z-index-10: 100;
-
 
 // Grid Variables
 $container-width: 1000px !default;
