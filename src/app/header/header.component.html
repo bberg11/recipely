@@ -3,10 +3,20 @@
     <div class="header__brand">Recipely</div>
     <ul class="header__nav">
       <li class="header__nav-item">
-        <a href="#" class="header__nav-link">Recipes</a>
+        <a
+          href="#"
+          class="header__nav-link"
+          (click)="onNavClick($event, 'recipes')"
+          >Recipes</a
+        >
       </li>
       <li class="header__nav-item">
-        <a href="#" class="header__nav-link">Shopping List</a>
+        <a
+          href="#"
+          class="header__nav-link"
+          (click)="onNavClick($event, 'shopping-list')"
+          >Shopping List</a
+        >
       </li>
     </ul>
     <ul class="header__utility">

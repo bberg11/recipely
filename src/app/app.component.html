@@ -1,5 +1,5 @@
-<app-header></app-header>
+<app-header (navLinkClicked)="handleNavigation($event)"></app-header>
 <div class="container">
-  <app-recipe-list></app-recipe-list>
-  <app-shopping-list></app-shopping-list>
+  <app-recipe-list *ngIf="currentView === 'recipes'"></app-recipe-list>
+  <app-shopping-list *ngIf="currentView !== 'recipes'"></app-shopping-list>
 </div>
