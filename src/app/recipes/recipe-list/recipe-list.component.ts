@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe-list.component.scss'],
 })
 export class RecipeListComponent implements OnInit {
+  recipe: Recipe;
   recipes: Recipe[] = [
     new Recipe(
       'Recipe One',
@@ -24,7 +25,7 @@ export class RecipeListComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  randomNumber(): number {
-    return Math.floor(Math.random() * 1000) + 1;
+  onRecipeItemClick(recipe: Recipe): void {
+    this.recipe = recipe;
   }
 }

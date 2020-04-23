@@ -6,11 +6,12 @@
         <app-recipe-item
           *ngFor="let recipe of recipes"
           [recipe]="recipe"
+          (click)="onRecipeItemClick(recipe)"
         ></app-recipe-item>
       </ul>
     </div>
   </div>
   <div class="col col--8">
-    <app-recipe-detail></app-recipe-detail>
+    <app-recipe-detail *ngIf="recipe" [recipe]="recipe"></app-recipe-detail>
   </div>
 </div>
