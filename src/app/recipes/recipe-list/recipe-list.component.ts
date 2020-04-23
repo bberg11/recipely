@@ -1,3 +1,4 @@
+import { RecipesService } from './../../services/recipes.service';
 import { Recipe } from './../recipe.model';
 import { Component, OnInit } from '@angular/core';
 
@@ -5,27 +6,18 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
   styleUrls: ['./recipe-list.component.scss'],
+  providers: [RecipesService],
 })
 export class RecipeListComponent implements OnInit {
-  recipe: Recipe;
-  recipes: Recipe[] = [
-    new Recipe(
-      'Recipe One',
-      'Description of Recipe One. Yadda yadda yadda',
-      'https://via.placeholder.com/150'
-    ),
-    new Recipe(
-      'Recipe Two',
-      'Description of Recipe Two. Nom nom nom',
-      'https://via.placeholder.com/150'
-    ),
-  ];
+  recipes: Recipe[];
 
-  constructor() {}
+  constructor(private recipesService: RecipesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.recipes = this.recipesService.getRecipes();
+  }
 
   onRecipeItemClick(recipe: Recipe): void {
-    this.recipe = recipe;
+    this.recipesService.recipeWasSelected.emit(recipe);
   }
 }
