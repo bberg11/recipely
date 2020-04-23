@@ -1,3 +1,4 @@
+import { ShoppingListsService } from './services/shopping-lists.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -20,7 +21,7 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
     RecipeDetailComponent,
   ],
   imports: [BrowserModule],
-  providers: [],
+  providers: [ShoppingListsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

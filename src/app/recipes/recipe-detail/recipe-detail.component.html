@@ -3,18 +3,27 @@
   <h2 class="recipe-detail__name">Recipe Detail: {{ recipe.name }}</h2>
   <ul class="recipe-detail__actions">
     <li class="recipe-detail__action">
-      <a class="recipe-detail__action-link" href="#">Something</a>
+      <a
+        class="recipe-detail__action-link"
+        href="#"
+        (click)="onAddToShoppingList($event)"
+        >Add to Shopping List</a
+      >
     </li>
     <li class="recipe-detail__action">
-      <a class="recipe-detail__action-link" href="#">Something</a>
+      <a class="recipe-detail__action-link" href="#">Edit Recipe</a>
     </li>
     <li class="recipe-detail__action">
-      <a class="recipe-detail__action-link" href="#">Something</a>
+      <a class="recipe-detail__action-link" href="#">Delete Recipe</a>
     </li>
   </ul>
   <div class="recipe-detail__description">{{ recipe.description }}</div>
   <ul class="recipe-detail__ingredients">
-    <li class="recipe-detail__ingredient">10 of Ingredient</li>
-    <li class="recipe-detail__ingredient">10 of Ingredient</li>
+    <li
+      class="recipe-detail__ingredient"
+      *ngFor="let ingredient of recipe.ingredients"
+    >
+      {{ ingredient.amount }} - {{ ingredient.name }}
+    </li>
   </ul>
 </div>
