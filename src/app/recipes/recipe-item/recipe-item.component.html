@@ -1,1 +1,9 @@
-<p>recipe-item works!</p>
+<li class="recipe-item">
+  <p class="recipe-item__name">{{ recipe.name }}</p>
+  <p class="recipe-item__description">{{ recipe.description }}</p>
+  <img
+    src="{{ recipe.imagePath }}"
+    alt="{{ recipe.name }}"
+    class="recipe-item__image"
+  />
+</li>

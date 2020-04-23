@@ -3,15 +3,10 @@
     <div class="recipe-list">
       <h2 class="recipe-list__name">Recipes List</h2>
       <ul class="recipe-list__items">
-        <li class="recipe-item" *ngFor="let recipe of recipes">
-          <p class="recipe-item__name">{{ recipe.name }}</p>
-          <p class="recipe-item__description">{{ recipe.description }}</p>
-          <img
-            src="{{ recipe.imagePath }}"
-            alt="{{ recipe.name }}"
-            class="recipe-item__image"
-          />
-        </li>
+        <app-recipe-item
+          *ngFor="let recipe of recipes"
+          [recipe]="recipe"
+        ></app-recipe-item>
       </ul>
     </div>
   </div>
