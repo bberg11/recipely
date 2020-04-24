@@ -4,17 +4,17 @@
     <ul class="header__nav">
       <li class="header__nav-item">
         <a
-          href="#"
+          routerLink="/recipes"
+          routerLinkActive="header__nav-link--is-active"
           class="header__nav-link"
-          (click)="onNavClick($event, 'recipes')"
           >Recipes</a
         >
       </li>
       <li class="header__nav-item">
         <a
-          href="#"
+          routerLink="/shopping-list"
+          routerLinkActive="header__nav-link--is-active"
           class="header__nav-link"
-          (click)="onNavClick($event, 'shopping-list')"
           >Shopping List</a
         >
       </li>
