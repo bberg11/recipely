@@ -4,16 +4,19 @@
       <div class="recipes__list">
         <h2 class="recipes__list-name">Recipes List</h2>
         <ul class="recipes__list-items">
-          <app-recipe-item
-            *ngFor="let recipe of recipes"
-            [recipe]="recipe"
-            (click)="onRecipeItemClick(recipe)"
-          ></app-recipe-item>
+          <li
+            class="recipes__list-item"
+            *ngFor="let recipe of recipes; let id = index"
+          >
+            <a [routerLink]="[id]" class="recipes__list-item-link">
+              <app-recipe-item [recipe]="recipe"></app-recipe-item>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
     <div class="col col--8">
-      <app-recipe-detail></app-recipe-detail>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
