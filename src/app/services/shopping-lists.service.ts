@@ -1,5 +1,6 @@
-import { Ingredient } from './../models/ingredient.model';
 import { Injectable } from '@angular/core';
+
+import { Ingredient } from './../models/ingredient.model';
 
 @Injectable()
 export class ShoppingListsService {

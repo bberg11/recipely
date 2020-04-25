@@ -1,0 +1,19 @@
+<div class="recipes">
+  <div class="row">
+    <div class="col col--4">
+      <div class="recipes__list">
+        <h2 class="recipes__list-name">Recipes List</h2>
+        <ul class="recipes__list-items">
+          <app-recipe-item
+            *ngFor="let recipe of recipes"
+            [recipe]="recipe"
+            (click)="onRecipeItemClick(recipe)"
+          ></app-recipe-item>
+        </ul>
+      </div>
+    </div>
+    <div class="col col--8">
+      <app-recipe-detail></app-recipe-detail>
+    </div>
+  </div>
+</div>

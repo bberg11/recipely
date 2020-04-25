@@ -1,6 +1,7 @@
+import { Component, OnInit } from '@angular/core';
+
 import { ShoppingListsService } from './../../services/shopping-lists.service';
 import { Ingredient } from './../../models/ingredient.model';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-shopping-list',
