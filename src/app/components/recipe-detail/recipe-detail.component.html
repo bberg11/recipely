@@ -1,29 +1,42 @@
-<div class="recipe-detail" *ngIf="recipe">
-  <img src="{{ recipe.imagePath }}" alt="" class="recipe-detail__image" />
-  <h2 class="recipe-detail__name">Recipe Detail: {{ recipe.name }}</h2>
-  <ul class="recipe-detail__actions">
-    <li class="recipe-detail__action">
-      <a
-        class="recipe-detail__action-link"
-        href="#"
-        (click)="onAddToShoppingList($event)"
-        >Add to Shopping List</a
+<div class="recipe-detail">
+  <div *ngIf="recipe; else showNewLink">
+    <img src="{{ recipe.imagePath }}" alt="" class="recipe-detail__image" />
+    <h2 class="recipe-detail__name">Recipe Detail: {{ recipe.name }}</h2>
+    <ul class="recipe-detail__actions">
+      <li class="recipe-detail__action">
+        <a
+          class="recipe-detail__action-link"
+          href="#"
+          (click)="onAddToShoppingList($event)"
+          >Add to Shopping List</a
+        >
+      </li>
+      <li class="recipe-detail__action">
+        <a class="recipe-detail__action-link" routerLink="edit">Edit Recipe</a>
+      </li>
+      <li class="recipe-detail__action">
+        <a class="recipe-detail__action-link" href="#">Delete Recipe</a>
+      </li>
+    </ul>
+    <div class="recipe-detail__description">{{ recipe.description }}</div>
+    <ul class="recipe-detail__ingredients">
+      <li
+        class="recipe-detail__ingredient"
+        *ngFor="let ingredient of recipe.ingredients"
       >
-    </li>
-    <li class="recipe-detail__action">
-      <a class="recipe-detail__action-link" href="#">Edit Recipe</a>
-    </li>
-    <li class="recipe-detail__action">
-      <a class="recipe-detail__action-link" href="#">Delete Recipe</a>
-    </li>
-  </ul>
-  <div class="recipe-detail__description">{{ recipe.description }}</div>
-  <ul class="recipe-detail__ingredients">
-    <li
-      class="recipe-detail__ingredient"
-      *ngFor="let ingredient of recipe.ingredients"
-    >
-      {{ ingredient.amount }} - {{ ingredient.name }}
-    </li>
-  </ul>
+        {{ ingredient.amount }} - {{ ingredient.name }}
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #showNewLink>
+    <div class="recipe-detail__empty">
+      <h2 class="recipe-detail__empty-text">
+        Please choose a recipe or add a new one
+      </h2>
+      <a routerLink="new" class="recipe-detail__new btn btn--success"
+        >Add New Recipe</a
+      >
+    </div>
+  </ng-template>
 </div>
