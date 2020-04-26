@@ -4,7 +4,11 @@
     <app-shopping-list-edit></app-shopping-list-edit>
     <hr />
     <ul class="shopping-list__items">
-      <li class="shopping-list__item" *ngFor="let ingredient of ingredients">
+      <li
+        class="shopping-list__item"
+        *ngFor="let ingredient of ingredients; let i = index"
+        (click)="onShoppingListSelection(i)"
+      >
         <span class="shopping-list__item-amount">{{ ingredient.amount }}</span>
         -
         <span class="shopping-list__item-name">{{ ingredient.name }}</span>

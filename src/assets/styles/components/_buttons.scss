@@ -33,6 +33,11 @@
   &:active {
     background-color: $color-primary;
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
 }
 
 // Basic Colors

@@ -1,4 +1,4 @@
-<form class="shopping-list-edit" (submit)="onAddIngredient($event)">
+<form class="shopping-list-edit" (ngSubmit)="onSubmit(form)" #form="ngForm">
   <div class="row">
     <div class="col col--2">
       <label for="name">Amount</label>
@@ -7,8 +7,9 @@
         type="number"
         id="amount"
         name="amount"
-        value="1"
-        #amountInput
+        pattern="^[1-9]+[0-9]*$"
+        required
+        [(ngModel)]="defaultValues.amount"
       />
     </div>
     <div class="col col--10">
@@ -19,18 +20,33 @@
         placeholder="Ex: cup whole milk"
         id="name"
         name="name"
-        #nameInput
+        required
+        [(ngModel)]="defaultValues.name"
       />
     </div>
   </div>
   <div class="shopping-list-edit__actions">
-    <button type="submit" class="btn btn--success shopping-list-edit__action">
-      Add
+    <button
+      type="submit"
+      [disabled]="!form.valid"
+      class="btn btn--success shopping-list-edit__action"
+    >
+      {{ editMode ? 'Update' : 'Add' }}
     </button>
-    <button type="button" class="btn btn--danger shopping-list-edit__action">
+    <button
+      type="button"
+      class="btn btn--danger shopping-list-edit__action"
+      (click)="onDelete()"
+      *ngIf="editMode"
+    >
       Delete
     </button>
-    <button type="button" class="btn btn--primary shopping-list-edit__action">
+    <button
+      type="button"
+      class="btn btn--primary shopping-list-edit__action"
+      (click)="onClear()"
+      *ngIf="!form.pristine || editMode"
+    >
       Clear
     </button>
   </div>
