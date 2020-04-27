@@ -1,21 +1,25 @@
 <div class="recipe-detail">
   <div *ngIf="recipe; else showNewLink">
-    <h2 class="recipe-detail__name">Recipe Detail: {{ recipe.name }}</h2>
+    <h2 class="recipe-detail__name">{{ recipe.name }}</h2>
     <ul class="recipe-detail__actions">
       <li class="recipe-detail__action">
-        <a class="recipe-detail__action-link" routerLink="edit">Edit Recipe</a>
+        <a class="recipe-detail__action-link btn btn--primary" routerLink="edit"
+          >Edit Recipe</a
+        >
       </li>
+      &nbsp;
       <li class="recipe-detail__action">
         <a
-          class="recipe-detail__action-link"
+          class="recipe-detail__action-link btn btn--success"
           href="#"
           (click)="onAddToShoppingList($event)"
           >Add to Shopping List</a
         >
       </li>
+      &nbsp;
       <li class="recipe-detail__action">
         <a
-          class="recipe-detail__action-link"
+          class="recipe-detail__action-link btn btn--danger"
           href="#"
           (click)="onDelete($event)"
           >Delete Recipe</a

@@ -1,0 +1,30 @@
+@import '../../../assets/styles/abstracts/variables';
+.recipes {
+}
+
+.recipes__list {
+}
+
+.recipes__list-items {
+  list-style: none;
+}
+
+.recipes__list-item {
+  margin: 0;
+
+  & + & {
+    margin-top: ($spacing-unit * 2);
+  }
+}
+
+.recipes__list-item-link {
+  display: block;
+  padding: 0 ($spacing-unit * 2) 0 0;
+  color: $font-color;
+  border-right: 2px solid transparent;
+}
+
+.recipes__list-item-link--active {
+  color: $color-primary;
+  border-color: $color-primary;
+}

@@ -1,0 +1,17 @@
+@import '../../../assets/styles/abstracts/variables';
+
+.recipe-detail {
+}
+
+.recipe-detail__actions {
+  list-style: none;
+  margin: 0;
+}
+
+.recipe-detail__action {
+  display: inline-block;
+}
+
+.recipe-detail__image {
+  margin: 0 0 ($spacing-unit * 2);
+}

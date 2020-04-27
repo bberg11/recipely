@@ -1,0 +1,12 @@
+@import '../../../assets/styles/abstracts/variables';
+
+.recipe-item {
+}
+
+.recipe-item__name {
+  margin: 0 0 $spacing-unit;
+}
+
+.recipe-item__description {
+  margin: $spacing-unit 0 0;
+}

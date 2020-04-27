@@ -8,7 +8,11 @@
             class="recipes__list-item"
             *ngFor="let recipe of recipes; let id = index"
           >
-            <a [routerLink]="[id]" class="recipes__list-item-link">
+            <a
+              [routerLink]="[id]"
+              routerLinkActive="recipes__list-item-link--active"
+              class="recipes__list-item-link"
+            >
               <app-recipe-item [recipe]="recipe"></app-recipe-item>
             </a>
           </li>
