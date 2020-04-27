@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { Ingredient } from './../models/ingredient.model';
 import { Subject } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ShoppingListsService {
   ingredients: Ingredient[] = [
     new Ingredient('lb. of Potatoes', 1),
