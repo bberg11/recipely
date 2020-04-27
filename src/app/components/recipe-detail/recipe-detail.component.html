@@ -1,8 +1,10 @@
 <div class="recipe-detail">
   <div *ngIf="recipe; else showNewLink">
-    <img src="{{ recipe.imagePath }}" alt="" class="recipe-detail__image" />
     <h2 class="recipe-detail__name">Recipe Detail: {{ recipe.name }}</h2>
     <ul class="recipe-detail__actions">
+      <li class="recipe-detail__action">
+        <a class="recipe-detail__action-link" routerLink="edit">Edit Recipe</a>
+      </li>
       <li class="recipe-detail__action">
         <a
           class="recipe-detail__action-link"
@@ -12,13 +14,18 @@
         >
       </li>
       <li class="recipe-detail__action">
-        <a class="recipe-detail__action-link" routerLink="edit">Edit Recipe</a>
-      </li>
-      <li class="recipe-detail__action">
-        <a class="recipe-detail__action-link" href="#">Delete Recipe</a>
+        <a
+          class="recipe-detail__action-link"
+          href="#"
+          (click)="onDelete($event)"
+          >Delete Recipe</a
+        >
       </li>
     </ul>
+    <img src="{{ recipe.imagePath }}" alt="" class="recipe-detail__image" />
     <div class="recipe-detail__description">{{ recipe.description }}</div>
+    <hr />
+    <h3>Ingredients</h3>
     <ul class="recipe-detail__ingredients">
       <li
         class="recipe-detail__ingredient"

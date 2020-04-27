@@ -5,7 +5,6 @@
 //  making all elements inheriting from the root box-sizing value
 //  See:  https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 
-
 // Apply a natural box layout model to all elements, but allowing components
 // to change. Html is set to 62.5% so that all the REM measurements throughout
 // are based on 10px sizing. So basically 1.4rem = 14px
@@ -53,7 +52,6 @@ a {
   }
 }
 
-
 // Misc
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 hr {
@@ -79,14 +77,16 @@ ol {
 ul {
   padding-left: 0;
   margin-top: 0;
-  ul, ol {
+  ul,
+  ol {
     margin: 1.5rem 0 1.5rem 3rem;
     font-size: 90%;
   }
 }
 
 ol {
-  ol, ul {
+  ol,
+  ul {
     margin: 1.5rem 0 1.5rem 3rem;
     font-size: 90%;
   }
@@ -132,7 +132,6 @@ figcaption {
 // Tables
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-
 table {
   // border-spacing: 0;
   // border: 0;
@@ -162,7 +161,7 @@ table {
 
   td {
     border-bottom: 1px solid $gray-light;
-    padding: .6rem;
+    padding: 0.6rem;
     text-align: left;
     vertical-align: top;
   }
@@ -188,13 +187,13 @@ select {
 
 // Removes awkward default styles on some inputs for iOS
 input {
-  &[type="email"],
-  &[type="number"],
-  &[type="search"],
-  &[type="text"],
-  &[type="tel"],
-  &[type="url"],
-  &[type="password"] {
+  &[type='email'],
+  &[type='number'],
+  &[type='search'],
+  &[type='text'],
+  &[type='tel'],
+  &[type='url'],
+  &[type='password'] {
     appearance: none;
     background-color: #fff;
     border-radius: $global-radius;
@@ -226,7 +225,7 @@ label,
 legend {
   display: block;
   font-weight: 600;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 fieldset {
@@ -235,8 +234,8 @@ fieldset {
 }
 
 input {
-  &[type="checkbox"],
-  &[type="radio"] {
+  &[type='checkbox'],
+  &[type='radio'] {
     display: inline;
   }
 }
@@ -244,7 +243,12 @@ input {
 label > .label-body {
   display: inline-block;
   font-weight: normal;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border-color: $color-danger;
 }
 
 // Code
@@ -260,8 +264,8 @@ code {
   border-radius: $global-radius;
   border: 1px solid $gray-light;
   font-size: 90%;
-  margin: 0 .2rem;
-  padding: .2rem .5rem;
+  margin: 0 0.2rem;
+  padding: 0.2rem 0.5rem;
   white-space: nowrap;
 }
 

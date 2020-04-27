@@ -5,11 +5,11 @@ import { Recipe } from './../models/recipe.model';
 
 @Injectable()
 export class RecipesService {
-  private recipes: Recipe[] = [
+  recipes: Recipe[] = [
     new Recipe(
       'Recipe One',
       'Description of Recipe One. Yadda yadda yadda',
-      'https://via.placeholder.com/150',
+      'https://via.placeholder.com/800x400',
       [
         new Ingredient('lbs. of ground beef', 2),
         new Ingredient('cups Milk', 2),
@@ -19,7 +19,7 @@ export class RecipesService {
     new Recipe(
       'Recipe Two',
       'Description of Recipe Two. Nom nom nom',
-      'https://via.placeholder.com/150',
+      'https://via.placeholder.com/800x400',
       [
         new Ingredient('lbs. of ground beef', 1),
         new Ingredient('cups Milk', 4),
@@ -28,11 +28,19 @@ export class RecipesService {
     ),
   ];
 
-  getRecipes(): Recipe[] {
-    return this.recipes.slice();
-  }
-
   getRecipe(id: number): Recipe {
     return this.recipes[id];
+  }
+
+  updateRecipe(id: number, recipe: Recipe): void {
+    this.recipes[id] = recipe;
+  }
+
+  addRecipe(recipe: Recipe): void {
+    this.recipes.push(recipe);
+  }
+
+  deleteRecipe(id: number): void {
+    this.recipes.splice(id, 1);
   }
 }

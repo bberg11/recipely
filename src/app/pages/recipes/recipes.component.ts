@@ -7,7 +7,6 @@ import { Recipe } from '../../models/recipe.model';
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.scss'],
-  providers: [RecipesService],
 })
 export class RecipesComponent implements OnInit {
   recipes: Recipe[];
@@ -15,6 +14,6 @@ export class RecipesComponent implements OnInit {
   constructor(private recipesService: RecipesService) {}
 
   ngOnInit(): void {
-    this.recipes = this.recipesService.getRecipes();
+    this.recipes = this.recipesService.recipes;
   }
 }

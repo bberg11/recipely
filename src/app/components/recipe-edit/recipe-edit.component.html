@@ -1,3 +1,101 @@
 <div class="recipe-edit">
-  <h2 class="recipe-edit__title">Edit: {{ recipe.name }}</h2>
+  <h2 class="recipe-edit__title">{{ title() }}</h2>
+  <form class="recipe-edit__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col col--12">
+        <label for="name">Title</label>
+        <input
+          class="u-full-width"
+          type="text"
+          placeholder="Nom Nom Noodles"
+          id="name"
+          formControlName="name"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col--12">
+        <label for="image-path">Image URL</label>
+        <input
+          class="u-full-width"
+          type="text"
+          placeholder="Image URL"
+          id="image-path"
+          formControlName="imagePath"
+          #imagePath
+        />
+      </div>
+      <div class="col col--12">
+        <img [src]="imagePath.value" alt="" class="recipe-edit__image" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col--12">
+        <label for="description">Description</label>
+        <textarea
+          class="u-full-width"
+          placeholder="Enter a Description of Nom Nom Noodles"
+          id="description"
+          formControlName="description"
+        ></textarea>
+      </div>
+    </div>
+    <div formArrayName="ingredients">
+      <h3>Ingredients</h3>
+      <div
+        class="row"
+        *ngFor="let ingredientControl of controls; let i = index"
+        [formGroupName]="i"
+      >
+        <div class="col col--2">
+          <button
+            type="button"
+            class="btn btn--danger"
+            (click)="onRemoveIngredient(i)"
+          >
+            X
+          </button>
+        </div>
+        <div class="col col--1">
+          <input
+            class="u-full-width"
+            type="number"
+            formControlName="amount"
+            title="Amount"
+            value="1"
+            pattern="^[1-9]+[0-9]*$"
+          />
+        </div>
+        <div class="col col--9">
+          <input
+            class="u-full-width"
+            type="text"
+            placeholder="Ingredient name"
+            title="Name"
+            formControlName="name"
+          />
+        </div>
+      </div>
+    </div>
+    <button type="button" (click)="onAddIngredient()" class="btn">Add</button>
+
+    <hr />
+    <div class="recipe__actions">
+      <button
+        type="submit"
+        class="btn btn--success recipe__action"
+        [disabled]="!form.valid"
+      >
+        Save
+      </button>
+      &nbsp;
+      <button
+        type="button"
+        class="btn btn--danger recipe__action"
+        (click)="onCancel()"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
 </div>
