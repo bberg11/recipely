@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { NgForm } from '@angular/forms';
 import { Component } from '@angular/core';
 
@@ -16,24 +17,28 @@ export class AuthComponent {
 
   onSubmit(form: NgForm): void {
     const { email, password } = form.value;
+    let authObservable = new Observable();
 
     this.isLoading = true;
+    this.error = null;
 
     if (this.signInMode) {
-      this.authService.signUp(email, password).subscribe(
-        (response) => {
-          console.log(response);
-          this.isLoading = false;
-        },
-        (error) => {
-          console.log(error);
-          this.error = error;
-          this.isLoading = false;
-        }
-      );
+      authObservable = this.authService.signIn(email, password);
     } else {
-      // handle sign up
+      authObservable = this.authService.signUp(email, password);
     }
+
+    authObservable.subscribe(
+      (response) => {
+        console.log(response);
+        this.isLoading = false;
+      },
+      (error) => {
+        console.log(error);
+        this.error = error;
+        this.isLoading = false;
+      }
+    );
 
     form.reset();
   }
