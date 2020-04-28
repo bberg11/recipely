@@ -24,7 +24,11 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.currentRecipeIndex = params['id'];
-      this.recipe = this.recipesService.getRecipe(params['id']);
+      this.setCurrentRecipe();
+    });
+
+    this.recipesService.recipesChanged.subscribe(() => {
+      this.setCurrentRecipe();
     });
   }
 
@@ -43,5 +47,9 @@ export class RecipeDetailComponent implements OnInit {
 
     this.recipesService.deleteRecipe(this.currentRecipeIndex);
     this.router.navigate(['/recipes']);
+  }
+
+  private setCurrentRecipe(): void {
+    this.recipe = this.recipesService.getRecipe(this.currentRecipeIndex);
   }
 }

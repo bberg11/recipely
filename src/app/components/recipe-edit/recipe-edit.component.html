@@ -1,4 +1,4 @@
-<div class="recipe-edit">
+<div class="recipe-edit" *ngIf="recipe">
   <h2 class="recipe-edit__title">{{ title() }}</h2>
   <form class="recipe-edit__form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="row">

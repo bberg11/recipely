@@ -21,15 +21,22 @@
     </ul>
     <ul class="header__utility">
       <li class="header__utility-item">
-        <a href="#" class="header__utility-link">Manage</a>
-        <ul class="header__utility-dropdown">
-          <li class="header__utility-dropdown-item">
-            <a href="#" class="header__utility-dropdown-link">Save</a>
-          </li>
-          <li class="header__utility-dropdown-item">
-            <a href="#" class="header__utility-dropdown-link">Get</a>
-          </li>
-        </ul>
+        <button
+          type="button"
+          class="header__utility-link btn"
+          (click)="onSaveData()"
+        >
+          Save Data
+        </button>
+      </li>
+      <li class="header__utility-item">
+        <button
+          type="button"
+          class="header__utility-link btn"
+          (click)="onGetData()"
+        >
+          Get Data
+        </button>
       </li>
     </ul>
   </div>

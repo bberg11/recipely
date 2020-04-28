@@ -51,20 +51,11 @@
 }
 
 .header__utility-item {
+  display: inline-block;
   position: relative;
   margin: 0 $spacing-unit;
 }
 
-.header__utility-dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  text-align: left;
-  background: white;
-
-  .header__utility-item:hover & {
-    display: block;
-  }
+.header__utility-link {
+  margin: 0;
 }
