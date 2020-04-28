@@ -7,6 +7,7 @@ import { RecipesComponent } from './pages/recipes/recipes.component';
 import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
 import { RecipeEditComponent } from './components/recipe-edit/recipe-edit.component';
 import { ShoppingListComponent } from './pages/shopping-list/shopping-list.component';
+import { AuthComponent } from './pages/auth/auth.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full' },
@@ -26,6 +27,7 @@ const routes: Routes = [
     component: ShoppingListComponent,
     resolve: [ShoppingListResolverService],
   },
+  { path: 'auth', component: AuthComponent },
 ];
 
 // configures NgModule imports and exports

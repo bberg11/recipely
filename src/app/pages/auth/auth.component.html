@@ -1,0 +1,42 @@
+<h1>{{ signInMode ? 'Sign In' : 'Sign Up' }}</h1>
+<form #form="ngForm" (submit)="onSubmit(form)">
+  <div class="row">
+    <div class="col col--6">
+      <label for="email">Your email</label>
+      <input
+        class="u-full-width"
+        type="email"
+        placeholder="test@mailbox.com"
+        id="email"
+        name="email"
+        ngModel
+        required
+        email
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col--6">
+      <label for="password">Your password</label>
+      <input
+        class="u-full-width"
+        type="password"
+        id="password"
+        name="password"
+        ngModel
+        required
+        minlength="6"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <button type="submit" class="btn btn--primary" [disabled]="!form.valid">
+      {{ signInMode ? 'Sign In' : 'Sign Up' }}
+    </button>
+  </div>
+  <div class="row">
+    <a href="#" (click)="toggleMode($event)">{{
+      signInMode ? "I don't have an account" : 'I already have an account'
+    }}</a>
+  </div>
+</form>
