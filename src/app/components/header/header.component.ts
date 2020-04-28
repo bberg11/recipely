@@ -15,10 +15,11 @@ export class HeaderComponent {
 
   onSaveData(): void {
     this.dataStorageService.storeRecipes();
+    this.dataStorageService.storeShoppingList();
   }
 
   onGetData(): void {
     this.dataStorageService.getRecipes().subscribe();
-    this.router.navigate(['/recipes']);
+    this.dataStorageService.getShoppingList().subscribe();
   }
 }

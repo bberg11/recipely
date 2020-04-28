@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { ShoppingListResolverService } from './services/shopping-lists-resolver.service';
 import { RecipeResolverService } from './services/recipe-resolver.service';
 import { RecipesComponent } from './pages/recipes/recipes.component';
 import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
@@ -20,7 +21,11 @@ const routes: Routes = [
       { path: ':id/edit', component: RecipeEditComponent },
     ],
   },
-  { path: 'shopping-list', component: ShoppingListComponent },
+  {
+    path: 'shopping-list',
+    component: ShoppingListComponent,
+    resolve: [ShoppingListResolverService],
+  },
 ];
 
 // configures NgModule imports and exports

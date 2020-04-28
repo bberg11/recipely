@@ -7,12 +7,15 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class ShoppingListsService {
-  ingredients: Ingredient[] = [
-    new Ingredient('lb. of Potatoes', 1),
-    new Ingredient('Steaks', 3),
-    new Ingredient('dozen Eggs', 2),
-    new Ingredient('cup Whole Milk', 1),
-  ];
+  // ingredients: Ingredient[] = [
+  //   new Ingredient('lb. of Potatoes', 1),
+  //   new Ingredient('Steaks', 3),
+  //   new Ingredient('dozen Eggs', 2),
+  //   new Ingredient('cup Whole Milk', 1),
+  // ];
+  ingredients: Ingredient[] = [];
+
+  ingredientsChanged = new Subject<Ingredient[]>();
 
   selectingShoppingListItem = new Subject<number>();
 
