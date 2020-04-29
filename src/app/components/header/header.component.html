@@ -24,7 +24,9 @@
         <a routerLink="auth" class="header__utility-link btn">Sign In</a>
       </li>
       <li class="header__utility-item" *ngIf="user">
-        <a href="#" class="header__utility-link">Sign Out</a>
+        <a href="#" class="header__utility-link" (click)="onSignOut($event)"
+          >Sign Out</a
+        >
       </li>
       <li class="header__utility-item" *ngIf="user">
         <button

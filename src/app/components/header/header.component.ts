@@ -40,4 +40,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.dataStorageService.getRecipes().subscribe();
     this.dataStorageService.getShoppingList().subscribe();
   }
+
+  onSignOut(event: Event): void {
+    event.preventDefault();
+
+    this.authService.signOut();
+    this.router.navigate(['/auth']);
+  }
 }

@@ -68,6 +68,10 @@ export class AuthService {
       );
   }
 
+  signOut(): void {
+    this.user.next(null);
+  }
+
   private createUser(
     email: string,
     localId: string,
