@@ -7,28 +7,6 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class RecipesService {
-  // recipes: Recipe[] = [
-  //   new Recipe(
-  //     'Recipe One',
-  //     'Description of Recipe One. Yadda yadda yadda',
-  //     'https://via.placeholder.com/800x400',
-  //     [
-  //       new Ingredient('lbs. of ground beef', 2),
-  //       new Ingredient('cups Milk', 2),
-  //       new Ingredient('egg', 1),
-  //     ]
-  //   ),
-  //   new Recipe(
-  //     'Recipe Two',
-  //     'Description of Recipe Two. Nom nom nom',
-  //     'https://via.placeholder.com/800x400',
-  //     [
-  //       new Ingredient('lbs. of ground beef', 1),
-  //       new Ingredient('cups Milk', 4),
-  //       new Ingredient('teaspoons sugar', 12),
-  //     ]
-  //   ),
-  // ];
   recipes: Recipe[] = [];
 
   recipesChanged = new Subject<Recipe[]>();

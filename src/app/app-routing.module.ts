@@ -8,21 +8,23 @@ const routes: Routes = [
   {
     path: 'recipes',
     loadChildren: async () => {
-      const module = await import('./modules/recipes.module');
+      const module = await import('./modules/recipes/recipes.module');
       return module.RecipesModule;
     },
   },
   {
     path: 'shopping-list',
     loadChildren: async () => {
-      const module = await import('./modules/shopping-list.module');
+      const module = await import(
+        './modules/shopping-list/shopping-list.module'
+      );
       return module.ShoppingListModule;
     },
   },
   {
     path: 'auth',
     loadChildren: async () => {
-      const module = await import('./modules/auth.module');
+      const module = await import('./modules/auth/auth.module');
       return module.AuthModule;
     },
   },

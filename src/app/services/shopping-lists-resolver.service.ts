@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 
 import { Ingredient } from './../models/ingredient.model';
+
 import { ShoppingListsService } from './shopping-lists.service';
 import { DataStorageService } from './data-storage.service';
 

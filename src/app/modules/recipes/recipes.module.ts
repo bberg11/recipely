@@ -2,15 +2,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { SharedModule } from './shared.module';
+import { SharedModule } from '../shared/shared.module';
 
-import { RecipeResolverService } from '../services/recipe-resolver.service';
-import { AuthGuard } from '../services/auth.guard';
+import { RecipeResolverService } from 'src/app/services/recipe-resolver.service';
+import { AuthGuard } from 'src/app/services/auth.guard';
 
-import { RecipeEditComponent } from './../components/recipe-edit/recipe-edit.component';
-import { RecipeDetailComponent } from './../components/recipe-detail/recipe-detail.component';
-import { RecipeItemComponent } from './../components/recipe-item/recipe-item.component';
-import { RecipesComponent } from './../pages/recipes/recipes.component';
+import { RecipesComponent } from './components/recipes/recipes.component';
+import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
+import { RecipeEditComponent } from './components/recipe-edit/recipe-edit.component';
+import { RecipeItemComponent } from './components/recipe-item/recipe-item.component';
 
 const routes: Routes = [
   {

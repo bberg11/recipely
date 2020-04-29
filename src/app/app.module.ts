@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from './modules/shared.module';
+import { SharedModule } from './modules/shared/shared.module';
 
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 

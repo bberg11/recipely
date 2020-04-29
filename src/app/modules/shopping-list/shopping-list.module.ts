@@ -2,13 +2,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
-import { SharedModule } from './shared.module';
+import { SharedModule } from '../shared/shared.module';
 
-import { ShoppingListResolverService } from '../services/shopping-lists-resolver.service';
-import { AuthGuard } from '../services/auth.guard';
+import { ShoppingListResolverService } from 'src/app/services/shopping-lists-resolver.service';
+import { AuthGuard } from 'src/app/services/auth.guard';
 
-import { ShoppingListEditComponent } from './../components/shopping-list-edit/shopping-list-edit.component';
-import { ShoppingListComponent } from './../pages/shopping-list/shopping-list.component';
+import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
+import { ShoppingListEditComponent } from './components/shopping-list-edit/shopping-list-edit.component';
 
 const routes: Routes = [
   {

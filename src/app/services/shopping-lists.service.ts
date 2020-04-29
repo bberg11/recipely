@@ -1,18 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 import { Ingredient } from './../models/ingredient.model';
-import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ShoppingListsService {
-  // ingredients: Ingredient[] = [
-  //   new Ingredient('lb. of Potatoes', 1),
-  //   new Ingredient('Steaks', 3),
-  //   new Ingredient('dozen Eggs', 2),
-  //   new Ingredient('cup Whole Milk', 1),
-  // ];
   ingredients: Ingredient[] = [];
 
   ingredientsChanged = new Subject<Ingredient[]>();
