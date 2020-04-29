@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 import { NgForm } from '@angular/forms';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AuthService } from './../../services/auth.service';
 
@@ -13,7 +14,7 @@ export class AuthComponent {
   isLoading = false;
   error: string = null;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit(form: NgForm): void {
     const { email, password } = form.value;
@@ -32,6 +33,8 @@ export class AuthComponent {
       (response) => {
         console.log(response);
         this.isLoading = false;
+        console.log(this.authService.user);
+        this.router.navigate(['/recipes']);
       },
       (error) => {
         console.log(error);
