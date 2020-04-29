@@ -17,6 +17,7 @@ interface AuthResponseData {
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private API_KEY = 'AIzaSyBjKQYiz5bsLEiWjQsmlYbBDJ0-8fMhdpM';
+  private tokenExpirationTimer;
 
   user = new BehaviorSubject<User>(null);
 
@@ -70,6 +71,42 @@ export class AuthService {
 
   signOut(): void {
     this.user.next(null);
+    localStorage.removeItem('userData');
+
+    if (this.tokenExpirationTimer) {
+      clearTimeout(this.tokenExpirationTimer);
+    }
+    this.tokenExpirationTimer = null;
+  }
+
+  autoSignIn(): void {
+    const savedUser = JSON.parse(localStorage.getItem('userData'));
+
+    if (!savedUser) {
+      return;
+    }
+
+    const user = new User(
+      savedUser.email,
+      savedUser.id,
+      savedUser._token,
+      new Date(savedUser._tokenExpirationDate)
+    );
+
+    if (user.token) {
+      this.user.next(user);
+
+      const expirationDuration =
+        new Date(savedUser._tokenExpirationDate).getTime() -
+        new Date().getTime();
+      this.autoSignOut(expirationDuration);
+    }
+  }
+
+  autoSignOut(expirationDuration: number): void {
+    this.tokenExpirationTimer = setTimeout(() => {
+      this.signOut();
+    }, expirationDuration);
   }
 
   private createUser(
@@ -83,6 +120,9 @@ export class AuthService {
     const user = new User(email, localId, idToken, expirationDate);
 
     this.user.next(user);
+
+    this.autoSignOut(+expiresIn * 1000);
+    localStorage.setItem('userData', JSON.stringify(user));
   }
 
   private handleError(errorRes: HttpErrorResponse): Observable<never> {

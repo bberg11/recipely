@@ -30,14 +30,11 @@ export class AuthComponent {
     }
 
     authObservable.subscribe(
-      (response) => {
-        console.log(response);
+      () => {
         this.isLoading = false;
-        console.log(this.authService.user);
         this.router.navigate(['/recipes']);
       },
       (error) => {
-        console.log(error);
         this.error = error;
         this.isLoading = false;
       }
