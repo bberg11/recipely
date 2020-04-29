@@ -1,36 +1,31 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { AuthGuard } from './services/auth.guard';
-import { ShoppingListResolverService } from './services/shopping-lists-resolver.service';
-import { RecipeResolverService } from './services/recipe-resolver.service';
-import { RecipesComponent } from './pages/recipes/recipes.component';
-import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
-import { RecipeEditComponent } from './components/recipe-edit/recipe-edit.component';
-import { ShoppingListComponent } from './pages/shopping-list/shopping-list.component';
-import { AuthComponent } from './pages/auth/auth.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full' },
   {
     path: 'recipes',
-    component: RecipesComponent,
-    resolve: [RecipeResolverService],
-    canActivate: [AuthGuard],
-    children: [
-      { path: '', component: RecipeDetailComponent },
-      { path: 'new', component: RecipeEditComponent },
-      { path: ':id', component: RecipeDetailComponent },
-      { path: ':id/edit', component: RecipeEditComponent },
-    ],
+    loadChildren: async () => {
+      const module = await import('./modules/recipes.module');
+      return module.RecipesModule;
+    },
   },
   {
     path: 'shopping-list',
-    component: ShoppingListComponent,
-    resolve: [ShoppingListResolverService],
-    canActivate: [AuthGuard],
+    loadChildren: async () => {
+      const module = await import('./modules/shopping-list.module');
+      return module.ShoppingListModule;
+    },
   },
-  { path: 'auth', component: AuthComponent },
+  {
+    path: 'auth',
+    loadChildren: async () => {
+      const module = await import('./modules/auth.module');
+      return module.AuthModule;
+    },
+  },
 ];
 
 // configures NgModule imports and exports
