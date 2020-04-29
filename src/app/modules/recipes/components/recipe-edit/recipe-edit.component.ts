@@ -89,10 +89,6 @@ export class RecipeEditComponent implements OnInit {
   }
 
   private initForm(): void {
-    if (!this.recipe) {
-      return;
-    }
-
     let name = '';
     let imagePath = '';
     let description = '';
